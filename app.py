@@ -60,6 +60,7 @@ def load_accounts(server_name):
             filename = "account_br.txt"
         else:  # BD and others
             filename = "account_bd.txt"
+            filename = "account_pk.txt"
         
         filepath = os.path.join(base_dir, filename)
         # Check if file exists
@@ -311,7 +312,7 @@ def handle_requests():
         return jsonify({"error": "UID and server_name are required"}), 400
 
     # Valid servers
-    valid_servers = ["IND", "BR", "US", "SAC", "NA", "BD","RU"]
+    valid_servers = ["IND", "BR", "US", "SAC", "NA", "BD","RU", "PK"]
     if server_name not in valid_servers:
         return jsonify({"error": f"Invalid server. Use: {valid_servers}"}), 400
 
