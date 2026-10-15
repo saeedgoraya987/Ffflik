@@ -405,7 +405,7 @@ def reset_cache():
 def gen_tokens():
     """Generate JWT tokens for all accounts and return as JSON (use once to build accounts JSON)"""
     key = request.args.get("key")
-    server_name = request.args.get("server", "IND").upper()
+    server_name = request.args.get("server", "PK").upper()
     if key != "vtx":
         return jsonify({"error": "Invalid key"}), 403
 
